@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html>
+
+<style>
+
+
+
+#l1
+
+{
+
+  list-style-type: none;
+  margin: 10%;
+  padding: 22px 22px 22px 309px;
+
+  
+
+}
+
+#l2
+{
+         margin-top: 20px;
+         padding: 20px 20px 10px 540px;
+         
+}
+
+
+.class1,#div1
+{
+ 
+   background-color: lightblue;
+   color: blue;
+   font-family: arial;
+   font-size: 25px;   
+   border: 2px solid white;
+   border-radius: 2px;
+   text-align: center;
+ 
+}
+#demo
+{
+   
+   font-size: 30px;
+   color: white;
+   
+}
+</style>
+
+
+
+<body style="background-color: #003366">
+
+<div id="div1">
+  STOPWATCH 
+</div>
+
+<div id="l1">
+<button onclick="f1()" class="class1">
+
+  START
+
+</button>
+
+
+<button onclick="erase()" class="class1">
+
+  STOP
+
+</button>
+
+
+
+<button onclick="res()" class="class1">
+
+  RESET
+
+</button>
+
+
+</div>
+
+
+<div id="l2">
+<p id="demo">00:00
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+
+let b=0,t=60,ct,f=-1;
+
+
+
+function start()
+
+{
+   b=b+1;
+   
+  if(b%t<=9)
+  {
+  if(Math.floor(b/t)<=9)
+  {
+  document.getElementById("demo").innerHTML="0" + Math.floor(b/t) + ":0"+(b%t);
+  }
+  else
+  {
+    document.getElementById("demo").innerHTML=Math.floor(b/t) + ":0"+(b%t);
+  }
+  
+  }
+  
+  else 
+  {
+    if(Math.floor(b/t)<=9)
+    {
+    document.getElementById("demo").innerHTML="0" + Math.floor(b/t) +":"+(b%t);
+    }
+    else
+    {
+        document.getElementById("demo").innerHTML= Math.floor(b/t) + (b%t);
+    }
+  }
+ 
+ 
+}
+
+
+
+
+
+function f1()
+
+{
+
+
+
+ if(f==-1)
+
+ {
+
+   f=f+1;
+   ct=setInterval(start,1000);
+
+  }
+
+
+}
+
+
+
+function erase()
+
+{
+
+
+
+   f=-1;
+
+   clearInterval(ct)
+
+   
+
+}
+
+
+
+function res()
+
+{
+
+     a=0;
+
+     b=0;
+
+     f=-1;
+
+     document.getElementById("demo").innerHTML="00:00";
+
+     
+ 
+     clearInterval(ct);
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
